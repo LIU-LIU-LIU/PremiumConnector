@@ -1,54 +1,6 @@
-<p align="center">
-  <img width="96" height="96" src="https://www.spigotmc.org/attachments/pc-png.118068/">
-  <p align="center">*Support 1.7-1.16 Proxy Server!*</p>
-</p>
+# 此版本用于修复该插件因为mojang api更新导致的异常。
 
-PremiumConnector is a Bungeecord plugin that allow you to resolve UUID for Premium user account and permite cracked player to play on your server without compromite the security of your server. You can redirect cracked players to an specified server with a register plugin like AuthMe.
+在pom.xml中，引入最新的craftapi即可。
+[games647/CraftAPI: Minecraft library for contacting the Mojang API. Experimenting with Unit-Tests](https://github.com/games647/CraftAPI)
 
-# ⭐ Features ⭐
-- **UUID-fix** and **Skin-fix** for premium users
-- **Cracked** players using premium name can only connect to server when secondAttempt setting is enable.
-- **Redirect** cracked players don't using premium username to a specified server
-- Compatible with [GeyserMC](https://geysermc.org/) (Allow bedrock version to connect on BungeeCord/Paper server)
-
-## Supported auth plugins:
-- [AuthMe](https://www.spigotmc.org/resources/authmereloaded.6269/)
-- [LockLogin](https://www.spigotmc.org/resources/gsa-locklogin.75156/)
-
-You need to configure your auth plugin to use it with bungeecord.
-
-# ⌨ Commands ⌨
-
-|      Command      |              Permission            |           Description          | Alias  |
-| :---------------: | :--------------------------------: | :----------------------------: | :----: |
-| /premium (player) | *premiumconnector.command.premium* | Define player as Premium user. | /prem  |
-| /cracked (player) | *premiumconnector.command.cracked* | Define player as Cracked user. | /crack |
-|  /reset  (player) |  *premiumconnector.command.reset*  | Reset player.                  | /rst   |
-
-*premiumconnector.admin* permission allow you to use these commands on other players.
-
-# ⚙ Configuration ⚙
-```# Debug level
-debug: INFO
-
-# Server name on which cracked players are redirected for register/login them.
-authServer: crack
- 
-# Allow cracked player to use premium username
-secondAttempt: true
-
-# Block player to switch server until they are logged in
-blockServerSwitch: true
-
-# Time to confirm /premium command
-timeToConfirm: 30
-
-# Use it with precaution ! All players connecting from this address won't need authentification. Use this to register your Geyser proxy addresses such as 127.0.0.1 or 172.18.0.* (You can use wildcard matching).
-geyserProxy: []
-```
-
-# 🐜 Report bugs 🐜
-Please report bugs or ask for features like support for new authentification plugin on Github Issues
-
-# ❗ Warning ❗
-You must run Spigot server and BungeeCord in offline-mode. If you want fix UUID and skin you must forward informations through BungeeCord!
+> 由于依赖缺失无法编译出产品，直接反编译产品修复了此问题。产物在发布页中。
